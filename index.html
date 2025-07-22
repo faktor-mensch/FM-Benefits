@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Dein persönlicher Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Avenir;
+      color: #fff;
+      background-color: #040917;
+      padding: 2rem;
+      text-align: center;
+    }
+    .code-box {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #D11A5B;
+      color: #FFF;
+      border: 2px #888;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: all;
+    }
+    .copied {
+      margin-top: 1rem;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dein persönlicher Vorteilscode!</h1>
+  <p>Kopiere ihn und spare auf deinen Sportartikelkauf bei Hummel!</p>
+
+  <div id="code" class="code-box">Wird geladen...</div>
+  <div id="copied" class="copied">✓ Kopiert!</div>
+
+  <script>
+    const codeBox = document.getElementById("code");
+    const copiedMsg = document.getElementById("copied");
+
+    fetch("https://script.google.com/macros/s/AKfycbxoe2M7T36MOQU6H-TD7lLXkx4LZAH20AAcZLlCmpZlmacwZZGtrms4LEx_9wY8lpMr3Q/exec")
+      .then(res => res.text())
+      .then(code => {
+        codeBox.textContent = code;
+      })
+      .catch(() => {
+        codeBox.textContent = "Fehler beim Laden";
+      });
+
+    codeBox.addEventListener("click", () => {
+      navigator.clipboard.writeText(codeBox.textContent).then(() => {
+        copiedMsg.style.display = "block";
+        setTimeout(() => copiedMsg.style.display = "none", 2000);
+      });
+    });
+  </script>
+
+</body>
+</html>
