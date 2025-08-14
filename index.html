@@ -2,50 +2,287 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Dein persönlicher Code</title>
+  <title>Deine persönlichen Vorteile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Avenir;
-      color: #fff;
-      background-color: #040917;
-      padding: 2rem;
-      text-align: center;
-    }
-    a {
-    color: #fff;
-    }
-    .code-box {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background-color: #D11A5B;
-      color: #FFF;
-      border: 2px #888;
-      border-radius: 10px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      user-select: all;
-    }
-    .copied {
-      margin-top: 1rem;
-      color: green;
-      font-weight: bold;
-      display: none;
-    }
+   /* ====== Basis & Theme ====== */
+:root{
+  --bg-start:#0b1230;
+  --bg-end:#0e204a;
+  --card-bg:#0f1738;
+  --card-elev:#121c42;
+  --text:#e9ecf6;
+  --text-dim:#b9c0d6;
+  --accent:#9d4cff;      /* FM Akzent */
+  --accent-2:#ff2d74;    /* CTA */
+  --chip:#1a2558;
+  --ok:#2bd4a7;
+  --border: rgba(255,255,255,.08);
+  --ring: rgba(157,76,255,.35);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --shadow-soft: 0 6px 18px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:
+    /* diagonale Linien */
+    repeating-linear-gradient(-15deg, transparent 0 28px, rgba(255,255,255,.035) 28px 29px),
+    radial-gradient(1200px 600px at 20% -10%, rgba(157,76,255,.18), transparent 45%),
+    radial-gradient(900px 500px at 80% 120%, rgba(43,212,167,.12), transparent 45%),
+    linear-gradient(180deg, var(--bg-start), var(--bg-end));
+}
+
+/* ====== Layout ====== */
+.container{
+  max-width:1080px;
+  margin-inline:auto;
+  padding:28px 20px 56px;
+}
+
+.page-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+h1{
+  margin:16px 0 6px;
+  font-size:clamp(28px, 4vw, 48px);
+  line-height:1.1;
+  letter-spacing:.2px;
+}
+
+.subtitle{
+  color:var(--text-dim);
+  max-width:840px;
+  margin-bottom:22px;
+}
+
+/* ====== Benefit Card ====== */
+.benefit-card{
+  background:linear-gradient(180deg, var(--card-bg), var(--card-elev));
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.benefit-card__header{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:16px;
+  padding:22px 24px;
+  border-bottom:1px solid var(--border);
+}
+.vendor{
+  display:flex; align-items:center; gap:14px;
+}
+.vendor .badge{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,#ff2d74, #9d4cff);
+  display:grid;place-items:center;font-weight:800;
+}
+.vendor h3{margin:0;font-size:22px}
+.vendor .sub{color:var(--text-dim);font-size:14px;margin-top:2px}
+
+.logo-placeholder{
+  width:180px;height:44px;border-radius:10px;
+  background:rgba(255,255,255,.08);
+  display:grid;place-items:center;color:var(--text-dim);font-size:13px;
+}
+
+/* ====== Content row ====== */
+.benefit-card__body{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:22px;
+  padding:22px 24px 26px;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-bottom:16px;
+}
+.step{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+}
+.step h4{
+  margin:0 0 6px;
+  font-size:16px;
+}
+.step p{
+  margin:0;
+  color:var(--text-dim);
+  font-size:14px;
+}
+
+/* Code pill */
+.code-box{
+  display:flex; align-items:center; gap:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:10px;
+  box-shadow:var(--shadow-soft) inset;
+}
+.code{
+  flex:1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing:.25em;
+  font-weight:700;
+  background:#0c1534;
+  border:1px dashed rgba(255,255,255,.14);
+  border-radius:14px;
+  padding:12px 14px;
+  text-align:center;
+  user-select:all;
+}
+.btn-copy{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.btn-copy:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px var(--ring);
+}
+
+/* CTA side */
+.cta{
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  min-width:230px;
+}
+.btn-primary{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 18px;
+  background:linear-gradient(135deg,var(--accent-2),#ff6a3a);
+  color:white; font-weight:800;
+  border:none; border-radius:16px;
+  cursor:pointer; text-decoration:none;
+  box-shadow:0 12px 26px rgba(255,45,116,.35);
+  transition:transform .08s ease, filter .2s ease;
+}
+.btn-primary:hover{ transform:translateY(-1px); filter:saturate(1.05) }
+
+.note{
+  color:var(--text-dim);
+  font-size:12px;
+  max-width:260px;
+}
+
+/* Chips */
+.chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px }
+.chip{
+  background:var(--chip);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+  color:var(--text-dim);
+}
+
+/* Info row unterhalb */
+.tip{
+  color:var(--text-dim);
+  font-size:12px;
+  margin-top:8px;
+}
+
+/* ====== Footer small note ====== */
+.footer-note{
+  text-align:center;
+  color:var(--text-dim);
+  margin-top:24px;
+  font-size:13px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 860px){
+  .benefit-card__body{ grid-template-columns:1fr }
+  .cta{ min-width:unset }
+}
+@media (max-width: 620px){
+  .steps{ grid-template-columns:1fr }
+  .vendor h3{ font-size:20px }
+}
   </style>
 </head>
 <body>
 
-  <h1>Deine persönlichen Benefits!</h1>
-  <h3>Mit FAKTOR MENSCH bleibst du fit - unsere Partner geben dir den Schwung für ein bewegtes Leben.</h3>
-  <hr>
-  <br />
-  <h3><u>hummel Online-Shop</u></h3>
-  <p>Egal, welchen Sport du treibst - hummel rüstet dich aus. Kopiere den Code und spare auf deinen Sportartikelkauf!</p>
+ <div class="container">
+  <div class="page-kicker">Deine persönlichen Benefits</div>
+  <h1>Bleib fit & inspiriert – mit Partnern von<br>FAKTOR MENSCH</h1>
+  <p class="subtitle">Unsere Partner geben dir den Extra‑Schwung - sichere dir deinen Vorteil.</p>
 
-  <div id="code" class="code-box">Wird geladen...</div>
-  <div id="copied" class="copied">✓ Kopiert!</div>
+  <section class="benefit-card">
+    <div class="benefit-card__header">
+      <div class="vendor">
+        <div class="badge">FM</div>
+        <div>
+          <h3>hummel Online‑Shop</h3>
+          <div class="sub">Exklusiver Vorteil für Versicherte</div>
+        </div>
+      </div>
+      <div class="logo-placeholder"><img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1755182064/hu6639h576-hummel-logo-hummel-logo-vector-eps-382-06-kb-download-2_jgjvky.png" width="120px"></></div>
+    </div>
+
+    <div class="benefit-card__body">
+      <div>
+        <div class="steps">
+          <div class="step">
+            <h4>1. Code sichern</h4>
+            <p>Klicke auf „Kopieren“ und füge den Code im Shop ein.</p>
+          </div>
+          <div class="step">
+            <h4>2. Im Warenkorb einlösen</h4>
+            <p>Der Rabatt wird an der Kasse automatisch verrechnet.</p>
+          </div>
+        </div>
+
+        <div class="code-box">
+            <div id="code" class="code">Lade Code...</div>
+            <span id="copied" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+          <button class="btn-copy">Kopieren</button>
+        </div>
+        <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+        <div class="chips">
+          <span class="chip">FAKTOR MENSCH-Benefit</span>
+          <span class="chip">Sport Fashion</span>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a class="btn-primary" href="https://www.hummelsport.de">
+          Ab zum Shop! ↗
+        </a>
+        <div class="note">Hinweis: Der Code wird an der Kasse eingelöst.</div>
+      </div>
+    </div>
+  </section>
+<br /><br />
+  <center><h1>Mehr Vorteile folgen bald. Bleib dran!</h1></center>
+</div>
 
   <script>
     const codeBox = document.getElementById("code");
@@ -62,11 +299,9 @@
 
     codeBox.addEventListener("click", () => {
       navigator.clipboard.writeText(codeBox.textContent).then(() => {
-        copiedMsg.style.display = "block";
+        copiedMsg.style.display = "inline";
         setTimeout(() => copiedMsg.style.display = "none", 2000);
       });
     });
   </script>
-  <br /><br />
-  <a href="https://www.hummelsport.de/"><h2>Ab zum Shop! →</h2></a> 
 </body>
