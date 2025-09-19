@@ -20,7 +20,8 @@
   --shadow-soft: 0 6px 18px rgba(0,0,0,.28);
 }
 *{box-sizing:border-box}
-html,body{height:100%}
+html{min-height:100%}
+body{min-height:100vh}
 body{
   margin:0; font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
@@ -110,7 +111,7 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
     <h1>Bleib fit & inspiriert – mit Partnern von<br>FAKTOR MENSCH</h1>
     <p class="subtitle">Unsere Partner geben dir den Extra-Schwung - sichere dir deinen Vorteil.</p>
 
-    <section class="card">
+    <section class="card" data-partner="hummel">
       <header class="card__hd">
         <div class="vendor">
           <div class="badge">FM</div>
@@ -138,9 +139,9 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
           </div>
 
           <div class="code-box" role="group" aria-label="Rabattcode">
-            <div id="code" class="code" aria-live="polite">Noch kein Code geladen</div>
-            <span id="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
-            <button id="actionBtn" class="btn" type="button" aria-controls="code">Code laden</button>
+            <div class="code" aria-live="polite">Noch kein Code geladen</div>
+            <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+            <button class="btn" type="button">Code laden</button>
           </div>
 
           <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
@@ -157,6 +158,147 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
         </div>
       </div>
     </section>
+    <section class="card" style="margin-top:24px" data-partner="shopneu">
+      <header class="card__hd">
+        <div class="vendor">
+          <div class="badge">FM</div>
+          <div>
+            <h3>SHOP APOTHEKE - 15% für Neukunden</h3>
+            <div class="sub">Exklusiver Vorteil für Versicherte - bei 49€ Mindestbestellwert</div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1758281362/shopapo_l30dpt.png" alt="SHOP APOTHEKE Logo" width="180" />
+        </div>
+      </header>
+
+      <div class="card__bd">
+        <div>
+          <div class="steps">
+            <div class="step">
+              <h4>1. Code sichern</h4>
+              <p>Klicke auf „Kopieren“ und füge den Code im Portal ein.</p>
+            </div>
+            <div class="step">
+              <h4>2. Im Warenkorb einlösen</h4>
+              <p>Der Rabatt wird an der Kasse automatisch verrechnet.</p>
+            </div>
+          </div>
+
+          <div class="code-box" role="group" aria-label="Rabattcode">
+            <div class="code" aria-live="polite">Noch kein Code geladen</div>
+            <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+            <button class="btn" type="button">Code laden</button>
+          </div>
+
+          <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+          <div class="chips">
+            <span class="chip">FAKTOR MENSCH-Benefit</span>
+            <span class="chip">Medikamente</span>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn-primary" href="https://www.shop-apotheke.com/" target="_blank" rel="noopener">Ab zum Shop! ↗</a>
+          <div class="note">Hinweis: Der Code wird an der Kasse eingelöst.</div>
+        </div>
+      </div>
+    </section>
+<section class="card" style="margin-top:24px" data-partner="shopbestand">
+  <header class="card__hd">
+    <div class="vendor">
+      <div class="badge">FM</div>
+      <div>
+        <h3>SHOP APOTHEKE - 11% für Bestandskunden</h3>
+        <div class="sub">Exklusiver Vorteil für Versicherte - bei 59€ Mindestbestellwert</div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1758281362/shopapo_l30dpt.png" alt="SHOP APOTHEKE Logo" width="180" />
+    </div>
+  </header>
+
+  <div class="card__bd">
+    <div>
+      <div class="steps">
+        <div class="step">
+          <h4>1. Code sichern</h4>
+          <p>Klicke auf „Kopieren“ und füge den Code in der App ein.</p>
+        </div>
+        <div class="step">
+          <h4>2. Im Warenkorb einlösen</h4>
+          <p>Der Rabatt wird an der Kasse automatisch verrechnet.</p>
+        </div>
+      </div>
+
+      <div class="code-box" role="group" aria-label="Rabattcode">
+        <div class="code" aria-live="polite">Noch kein Code geladen</div>
+        <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+        <button class="btn" type="button">Code laden</button>
+      </div>
+
+      <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+      <div class="chips">
+        <span class="chip">FAKTOR MENSCH‑Benefit</span>
+        <span class="chip">Medikamente</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="btn-primary" href="https://www.shop-apotheke.com/" target="_blank" rel="noopener">Ab zum Shop! ↗</a>
+      <div class="note">Hinweis: Der Code wird an der Kasse eingelöst.</div>
+    </div>
+  </div>
+</section>
+<section class="card" style="margin-top:24px" data-partner="shopeigen">
+  <header class="card__hd">
+    <div class="vendor">
+      <div class="badge">FM</div>
+      <div>
+        <h3>SHOP APOTHEKE - 20% auf Eigenmarken</h3>
+        <div class="sub">Exklusiver Vorteil für Versicherte - mit den Eigenmarken von SHOP APOTHEKE sparen</div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1758281362/shopapo_l30dpt.png" alt="SHOP APOTHEKE Logo" width="180" />
+    </div>
+  </header>
+
+  <div class="card__bd">
+    <div>
+      <div class="steps">
+        <div class="step">
+          <h4>1. Code sichern</h4>
+          <p>Klicke auf „Kopieren“ und füge den Code im Shop ein.</p>
+        </div>
+        <div class="step">
+          <h4>2. Im Warenkorb einlösen</h4>
+          <p>Der Rabatt wird an der Kasse automatisch verrechnet.</p>
+        </div>
+      </div>
+
+      <div class="code-box" role="group" aria-label="Rabattcode">
+        <div class="code" aria-live="polite">Noch kein Code geladen</div>
+        <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+        <button class="btn" type="button">Code laden</button>
+      </div>
+
+      <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+      <div class="chips">
+        <span class="chip">FAKTOR MENSCH‑Benefit</span>
+        <span class="chip">Medikamente</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="btn-primary" href="https://www.shop-apotheke.com/" target="_blank" rel="noopener">Zum Shop ↗</a>
+      <div class="note">Hinweis: Der Code wird an der Kasse eingelöst.</div>
+    </div>
+  </div>
+</section>
 
     <h1 class="more-coming">Mehr Vorteile folgen bald. Bleib dran!</h1>
   </div>
@@ -165,77 +307,104 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
     <p style="color:var(--text-dim); padding:0 20px">Zum Laden/Kopieren des Codes bitte JavaScript aktivieren.</p>
   </noscript>
 
-  <script>
-  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxoe2M7T36MOQU6H-TD7lLXkx4LZAH20AAcZLlCmpZlmacwZZGtrms4LEx_9wY8lpMr3Q/exec";
+<script>
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxDuCxU3Y8-MIUmDOeWGFJlCNfzqRMG7a3wnjPzTt_9M2s06nFlpt3kPJqFtLXkqckGMA/exec";
 
-  const codeEl   = document.getElementById("code");
-  const actionBtn= document.getElementById("actionBtn");
-  const copiedEl = document.getElementById("copied");
+  function setupCodeBox(box) {
+    const codeEl = box.querySelector(".code");
+    const actionBtn = box.querySelector("button");
+    const copiedEl = box.querySelector(".copied");
+    const partner = box.closest('.card')?.dataset.partner || '';
 
-  let state = "idle";       // "idle" | "loading" | "loaded"
-  let currentCode = "";
+    let state = "idle";       // "idle" | "loading" | "loaded"
+    let currentCode = "";
 
-  async function loadCode() {
-    if (state === "loading") return;
-    state = "loading";
-    actionBtn.disabled = true;
-    actionBtn.textContent = "Lade…";
-    copiedEl.style.display = "none";
+    async function loadCode() {
+      if (state === "loading") return;
+      state = "loading";
+      actionBtn.disabled = true;
+      actionBtn.textContent = "Lade…";
+      copiedEl.style.display = "none";
 
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 7000);
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 7000);
 
-    try {
-      const res = await fetch(ENDPOINT, { cache: "no-store", signal: ctrl.signal });
-      if (!res.ok) throw new Error("Netzwerkfehler");
-      const code = (await res.text()).trim();
-      currentCode = code;
-      codeEl.textContent = code || "Kein Code erhalten";
-      state = code ? "loaded" : "idle";
-      actionBtn.textContent = code ? "Kopieren" : "Erneut laden";
-    } catch (e) {
-      currentCode = "";
-      codeEl.textContent = (e.name === "AbortError") ? "Zeitüberschreitung beim Laden" : "Fehler beim Laden";
-      state = "idle";
-      actionBtn.textContent = "Erneut laden";
-    } finally {
-      clearTimeout(t);
-      actionBtn.disabled = false;
+      try {
+        const url = partner ? `${ENDPOINT}?partner=${encodeURIComponent(partner)}` : ENDPOINT;
+        const res = await fetch(url, { cache: "no-store", signal: ctrl.signal });
+        if (!res.ok) throw new Error("Netzwerkfehler");
+
+        // Try to parse JSON first; fallback to plain text
+        const ct = res.headers.get("content-type") || "";
+        if (ct.includes("application/json")) {
+          const payload = await res.json();
+          if (payload && payload.ok && payload.code) {
+            currentCode = String(payload.code).trim();
+            codeEl.textContent = currentCode || "Kein Code erhalten";
+            state = currentCode ? "loaded" : "idle";
+            actionBtn.textContent = currentCode ? "Kopieren" : "Erneut laden";
+          } else if (payload && payload.error === "empty") {
+            currentCode = "";
+            codeEl.textContent = "Keine Codes mehr verfügbar";
+            state = "idle";
+            actionBtn.textContent = "Später erneut prüfen";
+          } else {
+            throw new Error("Unerwartete Antwort");
+          }
+        } else {
+          const code = (await res.text()).trim();
+          currentCode = code;
+          codeEl.textContent = code || "Kein Code erhalten";
+          state = code ? "loaded" : "idle";
+          actionBtn.textContent = code ? "Kopieren" : "Erneut laden";
+        }
+      } catch (e) {
+        currentCode = "";
+        codeEl.textContent = (e.name === "AbortError") ? "Zeitüberschreitung beim Laden" : "Fehler beim Laden";
+        state = "idle";
+        actionBtn.textContent = "Erneut laden";
+      } finally {
+        clearTimeout(t);
+        actionBtn.disabled = false;
+      }
     }
+
+    async function copyCode() {
+      if (!currentCode) return;
+      try {
+        await navigator.clipboard.writeText(currentCode);
+        copiedEl.style.display = "inline";
+        setTimeout(()=> copiedEl.style.display="none", 2000);
+      } catch {
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(codeEl);
+        sel.removeAllRanges(); sel.addRange(range);
+        copiedEl.textContent = "Markiert – STRG/CMD+C drücken";
+        copiedEl.style.display = "inline";
+        setTimeout(()=> { copiedEl.style.display="none"; copiedEl.textContent="Kopiert!"; }, 3000);
+      }
+    }
+
+    actionBtn.addEventListener("click", (ev) => {
+      // Shift+Klick lädt den Code bewusst neu
+      if (ev.shiftKey) return loadCode();
+
+      if (state === "loaded") {
+        copyCode();
+      } else {
+        loadCode();
+      }
+    });
+
+    // Optional: Klick in die Code-Box kopiert ebenfalls (wenn geladen)
+    codeEl.addEventListener("click", () => {
+      if (state === "loaded") copyCode();
+    });
   }
 
-  async function copyCode() {
-    if (!currentCode) return;
-    try {
-      await navigator.clipboard.writeText(currentCode);
-      copiedEl.style.display = "inline";
-      setTimeout(()=> copiedEl.style.display="none", 2000);
-    } catch {
-      const sel = window.getSelection();
-      const range = document.createRange();
-      range.selectNodeContents(codeEl);
-      sel.removeAllRanges(); sel.addRange(range);
-      copiedEl.textContent = "Markiert – STRG/CMD+C drücken";
-      copiedEl.style.display = "inline";
-      setTimeout(()=> { copiedEl.style.display="none"; copiedEl.textContent="Kopiert!"; }, 3000);
-    }
-  }
-
-  actionBtn.addEventListener("click", (ev) => {
-    // Shift+Klick lädt den Code bewusst neu
-    if (ev.shiftKey) return loadCode();
-
-    if (state === "loaded") {
-      copyCode();
-    } else {
-      loadCode();
-    }
-  });
-
-  // Optional: Klick in die Code-Box kopiert ebenfalls (wenn geladen)
-  codeEl.addEventListener("click", () => {
-    if (state === "loaded") copyCode();
-  });
-  </script>
+  // Alle vorhandenen Code-Boxen initialisieren
+  document.querySelectorAll('.code-box').forEach(setupCodeBox);
+</script>
 </body>
 </html>
