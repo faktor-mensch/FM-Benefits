@@ -36,10 +36,16 @@ body{
   display:inline-flex; align-items:center; gap:10px;
   background:rgba(255,255,255,.06); border:1px solid var(--border);
   padding:8px 12px; border-radius:999px; font-weight:600; letter-spacing:.2px;
+
 }
 h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-spacing:.2px }
 .subtitle{ color:var(--text-dim); max-width:840px; margin-bottom:22px }
 .more-coming{ text-align:center; margin:32px 0 }
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
 
 /* Card */
 .card{
@@ -107,6 +113,7 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
 </head>
 <body>
   <div class="container">
+    <h2><a href="https://app.faktor-mensch.eu">< Zurück</a></h2>
     <div class="page-kicker">Deine persönlichen Benefits</div>
     <h1>Bleib fit & inspiriert – mit Partnern von<br>FAKTOR MENSCH</h1>
     <p class="subtitle">Unsere Partner geben dir den Extra-Schwung - sichere dir deinen Vorteil.</p>
@@ -116,8 +123,8 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
         <div class="vendor">
           <div class="badge">FM</div>
           <div>
-            <h3>hummel Online-Shop</h3>
-            <div class="sub">Exklusiver Vorteil für Versicherte</div>
+            <h3>hummel Online-Shop - 25% auf (fast) alles sichern</h3>
+            <div class="sub">Exklusiver Vorteil für Versicherte – nur wenige Artikel ausgeschlossen!</div>
           </div>
         </div>
         <div class="logo">
@@ -300,6 +307,100 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
   </div>
 </section>
 
+    <section class="card" style="margin-top:24px" data-partner="partner-a" data-fixed-code="faktormensch16">
+      <header class="card__hd">
+        <div class="vendor">
+          <div class="badge">FM</div>
+          <div>
+            <h3>MISTER SPEX - 16% auf alle Brillen und Sonnenbrillen</h3>
+            <div class="sub">Exklusiver Vorteil für Versicherte - Ab 100€ Mindestbestellwert</div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1758893333/mrspex_zfe8yl.png" alt="Mister Spex Logo" width="180" />
+        </div>
+      </header>
+
+      <div class="card__bd">
+        <div>
+          <div class="steps">
+            <div class="step">
+              <h4>1. Code sichern</h4>
+              <p>Klicke auf „Kopieren“ und füge den Code im Shop/Portal ein.</p>
+            </div>
+            <div class="step">
+              <h4>2. Vorteil aktivieren</h4>
+              <p>Der Rabatt wird an der Kasse oder nach Eingabe automatisch verrechnet.</p>
+            </div>
+          </div>
+
+          <div class="code-box" role="group" aria-label="Rabattcode">
+            <div class="code" aria-live="polite">Noch kein Code geladen</div>
+            <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+            <button class="btn" type="button">Code laden</button>
+          </div>
+
+          <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+          <div class="chips">
+            <span class="chip">FAKTOR MENSCH‑Benefit</span>
+            <span class="chip">Sehhilfen</span>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn-primary" href="https://www.misterspex.de/" target="_blank" rel="noopener">Ab zum Shop ↗</a>
+          <div class="note">Hinweis: Der Code wird bei der Buchung eingelöst.</div>
+        </div>
+      </div>
+    </section>
+    <section class="card" style="margin-top:24px" data-partner="partner-b" data-fixed-code="FaktorMensch">
+      <header class="card__hd">
+        <div class="vendor">
+          <div class="badge">FM</div>
+          <div>
+            <h3>Airy - 5% auf Airys mit oder ohne Pflanzen</h3>
+            <div class="sub">Exklusiver Vorteil für Versicherte - nicht auf Bundles oder Sensoren, kein Mindestumsatz</div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="https://res.cloudinary.com/ddg5xbi4e/image/upload/v1758893333/Airy_xpbzrs.png" alt="Mister Spex Logo" width="120" />
+        </div>
+      </header>
+
+      <div class="card__bd">
+        <div>
+          <div class="steps">
+            <div class="step">
+              <h4>1. Code sichern</h4>
+              <p>Klicke auf „Kopieren“ und füge den Code im Shop/Portal ein.</p>
+            </div>
+            <div class="step">
+              <h4>2. Vorteil aktivieren</h4>
+              <p>Der Rabatt wird an der Kasse oder nach Eingabe automatisch verrechnet.</p>
+            </div>
+          </div>
+
+          <div class="code-box" role="group" aria-label="Rabattcode">
+            <div class="code" aria-live="polite">Noch kein Code geladen</div>
+            <span class="copied" role="status" style="display:none; font-size:12px; color:var(--ok);">Kopiert!</span>
+            <button class="btn" type="button">Code laden</button>
+          </div>
+
+          <div class="tip">Tipp: Der Code gilt nur für kurze Zeit.</div>
+
+          <div class="chips">
+            <span class="chip">FAKTOR MENSCH‑Benefit</span>
+            <span class="chip">Pflanzen</span>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn-primary" href="https://airy.green/" target="_blank" rel="noopener">Jetzt einlösen ↗</a>
+          <div class="note">Hinweis: Der Code wird bei der Buchung eingelöst.</div>
+        </div>
+      </div>
+    </section>
     <h1 class="more-coming">Mehr Vorteile folgen bald. Bleib dran!</h1>
   </div>
 
@@ -315,12 +416,22 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
     const actionBtn = box.querySelector("button");
     const copiedEl = box.querySelector(".copied");
     const partner = box.closest('.card')?.dataset.partner || '';
+    const fixedCode = box.dataset.fixedCode || box.closest('.card')?.dataset.fixedCode || '';
 
     let state = "idle";       // "idle" | "loading" | "loaded"
     let currentCode = "";
 
+    // If a fixed code is configured, initialize the UI and skip loading
+    if (fixedCode) {
+      currentCode = String(fixedCode).trim();
+      codeEl.textContent = currentCode;
+      state = "loaded";
+      actionBtn.textContent = "Kopieren";
+    }
+
     async function loadCode() {
       if (state === "loading") return;
+      if (fixedCode) { state = "loaded"; actionBtn.textContent = "Kopieren"; return; }
       state = "loading";
       actionBtn.disabled = true;
       actionBtn.textContent = "Lade…";
@@ -387,6 +498,9 @@ h1{ margin:16px 0 6px; font-size:clamp(28px,4vw,48px); line-height:1.1; letter-s
     }
 
     actionBtn.addEventListener("click", (ev) => {
+      if (fixedCode) {
+        return copyCode();
+      }
       // Shift+Klick lädt den Code bewusst neu
       if (ev.shiftKey) return loadCode();
 
